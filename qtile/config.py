@@ -133,10 +133,11 @@ groups = []
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
 
 group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
+
 #group_labels = ["DEV", "WWW", "SYS", "DOC", "VBOX", "CHAT", "MUS", "VID", "GFX",]
 #group_labels = ["", "", "", "", "", "", "", "", "",]
 
-group_layouts = ["tile", "monadtall", "tile", "tile", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
+group_layouts = ["Bsp", "tile", "Bsp", "tile", "Bsp", "Bsp", "Bsp", "Bsp", "Bsp"]
 
 
 for i in range(len(group_names)):
@@ -178,20 +179,20 @@ colors = colors.DoomOne
 
 layout_theme = {
         "border_width": 3,
-        "margin": 8,
-        "border_focus": colors[8],
-        "border_normal": colors[0],
+        "margin": 6,
+        "border_focus": colors[3],
+        "border_normal": colors[6],
         }
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.Max(),
+    #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    #layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     layout.Bsp(**layout_theme),
     layout.Matrix(**layout_theme),
-    layout.MonadTall(**layout_theme),
-    layout.MonadWide(**layout_theme),
+    #layout.MonadTall(**layout_theme),
+    #layout.MonadWide(**layout_theme),
     # layout.RatioTile(**layout_theme),
     layout.Tile(**layout_theme,
                 shift_windows=True,
@@ -215,7 +216,7 @@ extension_defaults = widget_defaults.copy()
 def init_widgets_list():
     widgets_list = [
             widget.Image(
-                filename = "~/.config/qtile/icons/arch.jpg",
+                filename = "~/.config/qtile/icons/oldarch.jpg",
                 scale = "False",
                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal)},
                 ),
@@ -369,7 +370,7 @@ def init_widgets_screen2():
 # For ex: Screen(top=bar.Bar(widgets=init_widgets_screen2(), background="#00000000", size=24)),
 
 def init_screens():
-    return[Screen(top=bar.Bar(widgets=init_widgets_screen1(), background="#00000000", size=26)),
+    return[Screen(top=bar.Bar(widgets=init_widgets_screen1(), background= colors[5], size=26)),
            Screen(top=bar.Bar(widgets=init_widgets_screen2(), background="#00000000", size=26)),
            Screen(top=bar.Bar(widgets=init_widgets_screen2(), background="#00000000", size=26)),
            ]
