@@ -10,4 +10,5 @@ export PATH="/home/pogrammur/.cargo/bin:$PATH"
 alias v="nvim"
 alias t="tmux"
 alias lsa="ls -la"
+alias dl="cd ~/Downloads"
 
